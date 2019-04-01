@@ -1,10 +1,23 @@
 # Decoupled Greedy Learning
 
-This contains the source code for key experiments associated with the paper. In all experiments there is a log file which is generated in the local directory containing the per epoch training/val accuracy and other useful data. 
+This contains the source code for key experiments associated with the paper https://arxiv.org/abs/1901.08164. If you find this code helpful please cite our paper
+
+@article{belilovsky2019decoupled,
+  title={Decoupled Greedy Learning of CNNs},
+  author={Belilovsky, Eugene and Eickenberg, Michael and Oyallon, Edouard},
+  journal={arXiv preprint arXiv:1901.08164},
+  year={2019}
+}
+
+In all experiments there is a log file which is generated in the local directory containing the per epoch training/val accuracy and other useful data. 
+
+Coming soon.. (in a month or two) we will add some examples of implementations that distribute/parallelize across GPUs. If you are interested in an early version of that we can share by request. 
+
+For questions or comments please contact at: eugene.belilovsky@umontreal.ca
 
 ## dni_comparisons
 contains experiments used in Section 5
-This relies on the package https://github.com/koz4k/dni-pytorch . Which is also included for completness.
+This relies on the package https://github.com/koz4k/dni-pytorch . Which is also copied in the directory for completness
 
 end to end baseline
 

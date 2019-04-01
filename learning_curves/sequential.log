@@ -1,0 +1,355 @@
+Namespace(batch_size=128, cuda=True, epochs=50, name='sequential_step', no_cuda=False, seed=1, test_batch_size=1000)
+Net(
+  (blocks): ModuleList(
+    (0): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Sequential(
+      (0): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+      (1): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): Sequential(
+      (0): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+      (1): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU()
+    )
+  )
+  (auxillary_nets): ModuleList(
+    (0): auxillary_classifier2(
+      (blocks): ModuleList(
+        (0): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (1): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (2): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (classifier): Sequential(
+        (0): Linear(in_features=256, out_features=256, bias=True)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+        (3): Linear(in_features=256, out_features=256, bias=True)
+        (4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU(inplace)
+        (6): Linear(in_features=256, out_features=256, bias=True)
+        (7): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (8): ReLU(inplace)
+        (9): Linear(in_features=256, out_features=10, bias=True)
+      )
+    )
+    (1): auxillary_classifier2(
+      (blocks): ModuleList(
+        (0): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (1): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (2): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (classifier): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+        (3): Linear(in_features=512, out_features=512, bias=True)
+        (4): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU(inplace)
+        (6): Linear(in_features=512, out_features=512, bias=True)
+        (7): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (8): ReLU(inplace)
+        (9): Linear(in_features=512, out_features=10, bias=True)
+      )
+    )
+    (2): auxillary_classifier2(
+      (blocks): ModuleList(
+        (0): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (1): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (2): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (classifier): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+        (3): Linear(in_features=512, out_features=512, bias=True)
+        (4): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU(inplace)
+        (6): Linear(in_features=512, out_features=512, bias=True)
+        (7): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (8): ReLU(inplace)
+        (9): Linear(in_features=512, out_features=10, bias=True)
+      )
+    )
+    (3): auxillary_classifier2(
+      (blocks): ModuleList()
+      (bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (classifier): Sequential(
+        (0): Linear(in_features=1024, out_features=1024, bias=True)
+        (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+        (3): Linear(in_features=1024, out_features=1024, bias=True)
+        (4): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU(inplace)
+        (6): Linear(in_features=1024, out_features=10, bias=True)
+      )
+    )
+  )
+  (main_cnn): rep(
+    (blocks): ModuleList(
+      (0): Sequential(
+        (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): Sequential(
+        (0): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+        (1): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): ReLU()
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (3): Sequential(
+        (0): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+        (1): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): ReLU()
+      )
+    )
+  )
+)
+n: 1, epoch 1, loss: 1.65254, train top1:38.908 test top1:44.60000038146973 
+n: 1, epoch 2, loss: 1.43036, train top1:47.674 test top1:44.85000076293945 
+n: 1, epoch 3, loss: 1.30108, train top1:52.782 test top1:53.36000061035156 
+n: 1, epoch 4, loss: 1.21485, train top1:56.186 test top1:55.94000091552734 
+n: 1, epoch 5, loss: 1.15726, train top1:58.494 test top1:58.73000068664551 
+n: 1, epoch 6, loss: 1.11548, train top1:60.094 test top1:57.38000068664551 
+n: 1, epoch 7, loss: 1.09108, train top1:61.152 test top1:59.41000099182129 
+n: 1, epoch 8, loss: 1.06458, train top1:62.026 test top1:61.21000022888184 
+n: 1, epoch 9, loss: 1.04876, train top1:62.832 test top1:57.40000114440918 
+n: 1, epoch 10, loss: 1.02919, train top1:63.404 test top1:59.98000144958496 
+n: 1, epoch 11, loss: 1.01589, train top1:63.86 test top1:58.920000839233396 
+n: 1, epoch 12, loss: 1.02165, train top1:63.83 test top1:56.91000061035156 
+n: 1, epoch 13, loss: 1.00279, train top1:64.632 test top1:57.75000114440918 
+n: 1, epoch 14, loss: 0.99019, train top1:64.902 test top1:64.73000144958496 
+n: 1, epoch 15, loss: 0.99010, train top1:65.008 test top1:58.050000762939455 
+n: 1, epoch 16, loss: 0.81239, train top1:71.284 test top1:71.11000213623046 
+n: 1, epoch 17, loss: 0.76115, train top1:73.094 test top1:72.43000106811523 
+n: 1, epoch 18, loss: 0.74939, train top1:73.604 test top1:69.58000106811524 
+n: 1, epoch 19, loss: 0.73804, train top1:73.834 test top1:70.93000259399415 
+n: 1, epoch 20, loss: 0.73341, train top1:74.142 test top1:72.70000228881835 
+n: 1, epoch 21, loss: 0.72900, train top1:74.054 test top1:73.48000259399414 
+n: 1, epoch 22, loss: 0.72744, train top1:74.186 test top1:71.71000137329102 
+n: 1, epoch 23, loss: 0.72429, train top1:74.43 test top1:72.0000015258789 
+n: 1, epoch 24, loss: 0.71846, train top1:74.286 test top1:72.51000061035157 
+n: 1, epoch 25, loss: 0.71624, train top1:74.356 test top1:73.68000183105468 
+n: 1, epoch 26, loss: 0.71888, train top1:74.394 test top1:70.66000289916992 
+n: 1, epoch 27, loss: 0.71444, train top1:74.824 test top1:72.91000061035156 
+n: 1, epoch 28, loss: 0.71878, train top1:74.596 test top1:73.1500015258789 
+n: 1, epoch 29, loss: 0.70869, train top1:74.934 test top1:72.48000106811523 
+n: 1, epoch 30, loss: 0.71066, train top1:74.894 test top1:73.81000137329102 
+n: 1, epoch 31, loss: 0.60868, train top1:78.488 test top1:77.18000106811523 
+n: 1, epoch 32, loss: 0.57513, train top1:79.638 test top1:77.31000137329102 
+n: 1, epoch 33, loss: 0.56448, train top1:79.974 test top1:77.05000152587891 
+n: 1, epoch 34, loss: 0.55734, train top1:80.18 test top1:77.18000259399415 
+n: 1, epoch 35, loss: 0.54901, train top1:80.532 test top1:77.07000198364258 
+n: 1, epoch 36, loss: 0.54643, train top1:80.644 test top1:76.69000091552735 
+n: 1, epoch 37, loss: 0.54254, train top1:80.616 test top1:76.7400016784668 
+n: 1, epoch 38, loss: 0.53950, train top1:80.776 test top1:76.96000137329102 
+n: 1, epoch 39, loss: 0.53359, train top1:81.19 test top1:76.7400001525879 
+n: 1, epoch 40, loss: 0.52314, train top1:81.422 test top1:77.19000015258788 
+n: 1, epoch 41, loss: 0.53142, train top1:81.164 test top1:76.90000228881836 
+n: 1, epoch 42, loss: 0.52799, train top1:81.27 test top1:77.3900016784668 
+n: 1, epoch 43, loss: 0.52051, train top1:81.448 test top1:77.2400016784668 
+n: 1, epoch 44, loss: 0.51486, train top1:81.784 test top1:77.91000137329101 
+n: 1, epoch 45, loss: 0.51949, train top1:81.41 test top1:77.28000030517578 
+n: 1, epoch 46, loss: 0.47767, train top1:83.102 test top1:78.86000061035156 
+n: 1, epoch 47, loss: 0.46808, train top1:83.544 test top1:78.38000106811523 
+n: 1, epoch 48, loss: 0.46089, train top1:83.85 test top1:78.85000228881836 
+n: 1, epoch 49, loss: 0.45784, train top1:83.574 test top1:78.58000183105469 
+n: 1, epoch 50, loss: 0.45493, train top1:84.106 test top1:78.55000152587891 
+n: 2, epoch 1, loss: 1.30134, train top1:53.066 test top1:61.590000534057616 
+n: 2, epoch 2, loss: 1.01705, train top1:63.716 test top1:64.94000053405762 
+n: 2, epoch 3, loss: 0.93211, train top1:66.98 test top1:67.53000106811524 
+n: 2, epoch 4, loss: 0.88108, train top1:68.63 test top1:66.10000228881836 
+n: 2, epoch 5, loss: 0.85093, train top1:70.06 test top1:68.4500015258789 
+n: 2, epoch 6, loss: 0.82808, train top1:70.858 test top1:69.76000137329102 
+n: 2, epoch 7, loss: 0.80866, train top1:71.406 test top1:70.82000198364258 
+n: 2, epoch 8, loss: 0.79077, train top1:72.296 test top1:66.49000244140625 
+n: 2, epoch 9, loss: 0.78279, train top1:72.772 test top1:73.4500015258789 
+n: 2, epoch 10, loss: 0.76594, train top1:73.288 test top1:68.21000289916992 
+n: 2, epoch 11, loss: 0.76655, train top1:73.256 test top1:69.17000198364258 
+n: 2, epoch 12, loss: 0.76067, train top1:73.426 test top1:63.680001449584964 
+n: 2, epoch 13, loss: 0.74158, train top1:73.994 test top1:63.750000381469725 
+n: 2, epoch 14, loss: 0.73672, train top1:74.322 test top1:68.55000228881836 
+n: 2, epoch 15, loss: 0.73345, train top1:74.548 test top1:63.470000457763675 
+n: 2, epoch 16, loss: 0.56563, train top1:80.216 test top1:81.2400016784668 
+n: 2, epoch 17, loss: 0.52572, train top1:81.544 test top1:81.24000091552735 
+n: 2, epoch 18, loss: 0.51407, train top1:81.974 test top1:80.10000152587891 
+n: 2, epoch 19, loss: 0.50342, train top1:82.31 test top1:81.29000244140624 
+n: 2, epoch 20, loss: 0.49799, train top1:82.698 test top1:80.97000122070312 
+n: 2, epoch 21, loss: 0.49040, train top1:82.828 test top1:80.02000122070312 
+n: 2, epoch 22, loss: 0.48678, train top1:82.814 test top1:82.17000122070313 
+n: 2, epoch 23, loss: 0.48613, train top1:82.98 test top1:78.72000350952149 
+n: 2, epoch 24, loss: 0.48273, train top1:83.154 test top1:81.36000137329101 
+n: 2, epoch 25, loss: 0.48414, train top1:82.93 test top1:80.82000045776367 
+n: 2, epoch 26, loss: 0.48313, train top1:83.236 test top1:78.87000274658203 
+n: 2, epoch 27, loss: 0.47996, train top1:83.234 test top1:79.64000015258789 
+n: 2, epoch 28, loss: 0.48158, train top1:83.096 test top1:77.51000366210937 
+n: 2, epoch 29, loss: 0.47865, train top1:83.204 test top1:76.9800018310547 
+n: 2, epoch 30, loss: 0.47282, train top1:83.59 test top1:80.10000076293946 
+n: 2, epoch 31, loss: 0.38101, train top1:86.908 test top1:84.2900016784668 
+n: 2, epoch 32, loss: 0.35897, train top1:87.542 test top1:84.59000167846679 
+n: 2, epoch 33, loss: 0.35083, train top1:87.688 test top1:84.05000076293945 
+n: 2, epoch 34, loss: 0.33916, train top1:88.156 test top1:84.96000061035156 
+n: 2, epoch 35, loss: 0.33129, train top1:88.414 test top1:84.7500015258789 
+n: 2, epoch 36, loss: 0.32941, train top1:88.384 test top1:84.57000198364258 
+n: 2, epoch 37, loss: 0.32245, train top1:88.572 test top1:84.89000091552734 
+n: 2, epoch 38, loss: 0.32365, train top1:88.704 test top1:84.63000183105468 
+n: 2, epoch 39, loss: 0.31424, train top1:88.954 test top1:84.71000137329102 
+n: 2, epoch 40, loss: 0.31325, train top1:88.99 test top1:84.56000213623047 
+n: 2, epoch 41, loss: 0.30806, train top1:89.034 test top1:84.9000015258789 
+n: 2, epoch 42, loss: 0.30312, train top1:89.424 test top1:85.03000030517578 
+n: 2, epoch 43, loss: 0.30513, train top1:89.286 test top1:84.4500015258789 
+n: 2, epoch 44, loss: 0.30141, train top1:89.42 test top1:84.42000122070313 
+n: 2, epoch 45, loss: 0.29440, train top1:89.588 test top1:84.91000061035156 
+n: 2, epoch 46, loss: 0.27072, train top1:90.558 test top1:85.83000106811524 
+n: 2, epoch 47, loss: 0.25638, train top1:90.892 test top1:85.76000213623047 
+n: 2, epoch 48, loss: 0.25299, train top1:91.104 test top1:85.80000076293945 
+n: 2, epoch 49, loss: 0.25057, train top1:91.35 test top1:85.82000198364258 
+n: 2, epoch 50, loss: 0.24492, train top1:91.452 test top1:85.77000122070312 
+n: 3, epoch 1, loss: 0.95415, train top1:66.524 test top1:73.79000091552734 
+n: 3, epoch 2, loss: 0.70644, train top1:75.988 test top1:72.9400016784668 
+n: 3, epoch 3, loss: 0.64266, train top1:77.942 test top1:77.04000244140624 
+n: 3, epoch 4, loss: 0.61664, train top1:79.126 test top1:78.95000076293945 
+n: 3, epoch 5, loss: 0.58402, train top1:80.004 test top1:79.09000091552734 
+n: 3, epoch 6, loss: 0.56859, train top1:80.762 test top1:73.37000198364258 
+n: 3, epoch 7, loss: 0.56507, train top1:80.666 test top1:77.28000183105469 
+n: 3, epoch 8, loss: 0.55745, train top1:80.878 test top1:76.63000106811523 
+n: 3, epoch 9, loss: 0.55046, train top1:81.172 test top1:76.1500015258789 
+n: 3, epoch 10, loss: 0.54622, train top1:81.392 test top1:75.47000122070312 
+n: 3, epoch 11, loss: 0.53473, train top1:81.942 test top1:80.04000244140624 
+n: 3, epoch 12, loss: 0.53805, train top1:81.572 test top1:74.4800018310547 
+n: 3, epoch 13, loss: 0.53215, train top1:81.636 test top1:78.4500015258789 
+n: 3, epoch 14, loss: 0.52668, train top1:81.908 test top1:80.71000213623047 
+n: 3, epoch 15, loss: 0.52748, train top1:82.078 test top1:77.9500015258789 
+n: 3, epoch 16, loss: 0.39907, train top1:86.326 test top1:85.18000183105468 
+n: 3, epoch 17, loss: 0.37032, train top1:87.432 test top1:85.39000091552734 
+n: 3, epoch 18, loss: 0.35787, train top1:87.628 test top1:85.73000259399414 
+n: 3, epoch 19, loss: 0.35091, train top1:87.878 test top1:86.17000122070313 
+n: 3, epoch 20, loss: 0.34358, train top1:88.248 test top1:85.96000137329102 
+n: 3, epoch 21, loss: 0.34597, train top1:88.094 test top1:85.1400016784668 
+n: 3, epoch 22, loss: 0.33987, train top1:88.266 test top1:85.47000122070312 
+n: 3, epoch 23, loss: 0.34261, train top1:88.222 test top1:83.6900016784668 
+n: 3, epoch 24, loss: 0.33849, train top1:88.296 test top1:86.01000061035157 
+n: 3, epoch 25, loss: 0.33096, train top1:88.644 test top1:85.82000045776367 
+n: 3, epoch 26, loss: 0.33331, train top1:88.478 test top1:85.16000061035156 
+n: 3, epoch 27, loss: 0.33589, train top1:88.314 test top1:85.30000152587891 
+n: 3, epoch 28, loss: 0.32938, train top1:88.718 test top1:84.80000152587891 
+n: 3, epoch 29, loss: 0.33450, train top1:88.488 test top1:83.7300018310547 
+n: 3, epoch 30, loss: 0.33175, train top1:88.64 test top1:84.51000061035157 
+n: 3, epoch 31, loss: 0.27022, train top1:90.726 test top1:87.33000183105469 
+n: 3, epoch 32, loss: 0.24894, train top1:91.39 test top1:87.4800018310547 
+n: 3, epoch 33, loss: 0.23898, train top1:91.79 test top1:87.47000045776367 
+n: 3, epoch 34, loss: 0.23299, train top1:91.936 test top1:87.37000122070313 
+n: 3, epoch 35, loss: 0.22969, train top1:92.114 test top1:87.4000015258789 
+n: 3, epoch 36, loss: 0.22555, train top1:92.244 test top1:87.55000228881836 
+n: 3, epoch 37, loss: 0.22307, train top1:92.328 test top1:87.94000091552735 
+n: 3, epoch 38, loss: 0.21951, train top1:92.388 test top1:87.79000091552734 
+n: 3, epoch 39, loss: 0.21725, train top1:92.476 test top1:87.6900016784668 
+n: 3, epoch 40, loss: 0.21486, train top1:92.566 test top1:87.17000274658203 
+n: 3, epoch 41, loss: 0.21167, train top1:92.678 test top1:87.31000213623047 
+n: 3, epoch 42, loss: 0.21213, train top1:92.714 test top1:87.7000015258789 
+n: 3, epoch 43, loss: 0.20635, train top1:92.92 test top1:87.72000198364258 
+n: 3, epoch 44, loss: 0.20645, train top1:92.736 test top1:87.75000076293945 
+n: 3, epoch 45, loss: 0.20452, train top1:92.962 test top1:87.77000198364257 
+n: 3, epoch 46, loss: 0.18215, train top1:93.708 test top1:88.26000213623047 
+n: 3, epoch 47, loss: 0.17871, train top1:93.832 test top1:88.22000045776367 
+n: 3, epoch 48, loss: 0.17394, train top1:94.094 test top1:88.32000045776367 
+n: 3, epoch 49, loss: 0.17259, train top1:94.144 test top1:88.28000183105469 
+n: 3, epoch 50, loss: 0.17011, train top1:94.226 test top1:88.28000106811524 
+n: 4, epoch 1, loss: 0.52758, train top1:82.334 test top1:81.96000137329102 
+n: 4, epoch 2, loss: 0.37992, train top1:87.144 test top1:83.37000198364258 
+n: 4, epoch 3, loss: 0.35248, train top1:87.672 test top1:84.87000122070313 
+n: 4, epoch 4, loss: 0.33348, train top1:88.422 test top1:85.35 
+n: 4, epoch 5, loss: 0.32664, train top1:88.8 test top1:83.65000228881836 
+n: 4, epoch 6, loss: 0.31062, train top1:89.288 test top1:83.50000076293945 
+n: 4, epoch 7, loss: 0.30615, train top1:89.398 test top1:86.42000198364258 
+n: 4, epoch 8, loss: 0.30535, train top1:89.436 test top1:85.96000137329102 
+n: 4, epoch 9, loss: 0.30382, train top1:89.59 test top1:85.59000244140626 
+n: 4, epoch 10, loss: 0.29832, train top1:89.722 test top1:81.97000122070312 
+n: 4, epoch 11, loss: 0.29574, train top1:89.706 test top1:83.10000228881836 
+n: 4, epoch 12, loss: 0.29489, train top1:89.846 test top1:84.43000106811523 
+n: 4, epoch 13, loss: 0.29531, train top1:89.92 test top1:83.51000137329102 
+n: 4, epoch 14, loss: 0.29632, train top1:89.814 test top1:85.12000198364258 
+n: 4, epoch 15, loss: 0.29050, train top1:89.858 test top1:85.54000091552734 
+n: 4, epoch 16, loss: 0.21843, train top1:92.466 test top1:88.20000076293945 
+n: 4, epoch 17, loss: 0.19640, train top1:93.256 test top1:87.90000076293946 
+n: 4, epoch 18, loss: 0.19087, train top1:93.374 test top1:88.43000183105468 
+n: 4, epoch 19, loss: 0.18345, train top1:93.646 test top1:88.2500015258789 
+n: 4, epoch 20, loss: 0.17900, train top1:93.842 test top1:87.93000183105468 
+n: 4, epoch 21, loss: 0.17831, train top1:93.74 test top1:88.11000213623046 
+n: 4, epoch 22, loss: 0.17460, train top1:93.856 test top1:88.2900001525879 
+n: 4, epoch 23, loss: 0.16997, train top1:94.012 test top1:87.80000152587891 
+n: 4, epoch 24, loss: 0.16999, train top1:94.082 test top1:87.96000137329102 
+n: 4, epoch 25, loss: 0.16661, train top1:94.14 test top1:87.91000213623047 
+n: 4, epoch 26, loss: 0.16695, train top1:94.148 test top1:88.1900016784668 
+n: 4, epoch 27, loss: 0.16392, train top1:94.188 test top1:87.84000091552734 
+n: 4, epoch 28, loss: 0.16388, train top1:94.282 test top1:87.7500015258789 
+n: 4, epoch 29, loss: 0.16331, train top1:94.28 test top1:88.05000228881836 
+n: 4, epoch 30, loss: 0.16203, train top1:94.372 test top1:87.84000167846679 
+n: 4, epoch 31, loss: 0.12433, train top1:95.71 test top1:89.31000061035157 
+n: 4, epoch 32, loss: 0.10623, train top1:96.518 test top1:89.16000137329101 
+n: 4, epoch 33, loss: 0.10046, train top1:96.688 test top1:89.26000137329102 
+n: 4, epoch 34, loss: 0.10107, train top1:96.564 test top1:88.9000015258789 
+n: 4, epoch 35, loss: 0.09196, train top1:96.944 test top1:89.37000122070313 
+n: 4, epoch 36, loss: 0.09289, train top1:96.94 test top1:89.2300018310547 
+n: 4, epoch 37, loss: 0.09025, train top1:96.97 test top1:89.2000015258789 
+n: 4, epoch 38, loss: 0.08644, train top1:97.1 test top1:88.91000137329101 
+n: 4, epoch 39, loss: 0.08407, train top1:97.276 test top1:89.09000167846679 
+n: 4, epoch 40, loss: 0.08036, train top1:97.374 test top1:89.2500015258789 
+n: 4, epoch 41, loss: 0.07718, train top1:97.468 test top1:88.84000091552734 
+n: 4, epoch 42, loss: 0.07525, train top1:97.46 test top1:89.01000213623047 
+n: 4, epoch 43, loss: 0.07469, train top1:97.452 test top1:89.09000091552734 
+n: 4, epoch 44, loss: 0.07247, train top1:97.656 test top1:88.89000091552734 
+n: 4, epoch 45, loss: 0.07212, train top1:97.63 test top1:89.06000366210938 
+n: 4, epoch 46, loss: 0.06251, train top1:97.914 test top1:89.00000228881837 
+n: 4, epoch 47, loss: 0.06012, train top1:98.074 test top1:89.05000152587891 
+n: 4, epoch 48, loss: 0.05733, train top1:98.204 test top1:89.06000137329102 
+n: 4, epoch 49, loss: 0.05471, train top1:98.31 test top1:89.30000228881836 
+n: 4, epoch 50, loss: 0.05542, train top1:98.302 test top1:89.13000106811523 

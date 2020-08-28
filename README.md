@@ -11,7 +11,6 @@ This contains the source code for key experiments associated with the paper http
 
 In all experiments there is a log file which is generated in the local directory containing the per epoch training/val accuracy and other useful data. 
 
-Coming soon.. (in a month or two) we will add some examples of implementations that distribute/parallelize across GPUs. If you are interested in an early version of that we can share by request. 
 
 For questions or comments please contact at: eugene.belilovsky@umontreal.ca
 
